@@ -12,10 +12,12 @@ models:
                 - not_null
           - name: conversation_created_at
             tests:
-                - not_null
+              - not_null
+              - type: timestamp
           - name: closed_at
             tests:
                 - not_null
+                - type: timestamp
           - name: channel
             tests:
                 - not_null
@@ -43,6 +45,8 @@ models:
           - name: klaus_sentiment
             tests:
                 - not_null
+                - accepted_values:
+                   values: ['NEGATIVE', 'POSITIVE']
           - name: is_closed
             tests:
                 - not_null
@@ -52,9 +56,16 @@ models:
           - name: category_score
             tests:
                 - not_null
+                - type: int
+                - range: { min: 0, max: 100 }  # adjust based on your expected range
           - name: category
             tests:
                 - not_null
+                - accepted_values:
+                   values: ['Product knowledge', 'GDPR', 'Knowledge base', 'Tone', 'Solution', 'Grammar', 'Weather', 'Closing', 'Empathy', 'AIpie', 'Greeting', 'Readability', 'Undefined']
           - name: source
             tests:
                 - not_null
+                - accepted_values:
+                   values: ['AI', 'Reviewer']
+
