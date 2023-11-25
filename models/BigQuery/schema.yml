@@ -1,0 +1,71 @@
+
+version: 2
+
+models:
+    - name: my_first_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: external_ticket_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: conversation_created_at
+            tests:
+              - not_null
+              - type: timestamp
+          - name: closed_at
+            tests:
+                - not_null
+                - type: timestamp
+          - name: channel
+            tests:
+                - not_null
+          - name: message_count
+            tests:
+                - not_null
+          - name: language
+            tests:
+                - not_null
+          - name: unique_public_agent_count
+            tests:
+                - not_null
+          - name: public_mean_character_count
+            tests:
+                - not_null
+          - name: public_mean_word_count
+            tests:
+                - not_null
+          - name: private_message_count
+            tests:
+                - not_null
+          - name: public_message_count
+            tests:
+                - not_null
+          - name: klaus_sentiment
+            tests:
+                - not_null
+                - accepted_values:
+                   values: ['NEGATIVE', 'POSITIVE']
+          - name: is_closed
+            tests:
+                - not_null
+          - name: review_created
+            tests:
+                - not_null
+          - name: category_score
+            tests:
+                - not_null
+                - type: int
+                - range: { min: 0, max: 100 }  # adjust based on your expected range
+          - name: category
+            tests:
+                - not_null
+                - accepted_values:
+                   values: ['Product knowledge', 'GDPR', 'Knowledge base', 'Tone', 'Solution', 'Grammar', 'Weather', 'Closing', 'Empathy', 'AIpie', 'Greeting', 'Readability', 'Undefined']
+          - name: source
+            tests:
+                - not_null
+                - accepted_values:
+                   values: ['AI', 'Reviewer']
+
