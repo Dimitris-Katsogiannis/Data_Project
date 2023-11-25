@@ -2,7 +2,7 @@
 version: 2
 
 models:
-    - name: my_first_dbt_model
+    - name: Conversation_Rating
       description: "A starter dbt model"
       columns:
           - name: external_ticket_id
@@ -13,11 +13,9 @@ models:
           - name: conversation_created_at
             tests:
               - not_null
-              - type: timestamp
           - name: closed_at
             tests:
                 - not_null
-                - type: timestamp
           - name: channel
             tests:
                 - not_null
@@ -56,7 +54,6 @@ models:
           - name: category_score
             tests:
                 - not_null
-                - type: int
                 - range: { min: 0, max: 100 }  # adjust based on your expected range
           - name: category
             tests:

@@ -147,7 +147,7 @@ c.is_closed,
 a.review_created,
 a.category_score,
 a.category, 
-'AI' as source,
+'AutoQA' as source,
 from AutoQACombined as a
 left join RawData.Conversations as c
 on c.external_ticket_id = a.conversation_external_id
