@@ -66,3 +66,28 @@ models:
                 - accepted_values:
                    values: ['AI', 'Reviewer']
 
+    - name: AutoQa_CH_Report
+      description: "A starter dbt model"
+      columns:
+          - name: Source
+            tests:
+                - not_null
+          - name: Destination
+            tests:
+              - not_null
+          - name: Value
+            tests:
+              - not_null
+    - name: Reviewer_CH_Report
+      description: "A starter dbt model"
+      columns:
+          - name: Source
+            tests:
+                - not_null
+          - name: Destination
+            tests:
+              - not_null
+          - name: Value
+            tests:
+              - not_null
+
