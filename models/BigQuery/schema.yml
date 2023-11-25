@@ -1,0 +1,60 @@
+
+version: 2
+
+models:
+    - name: my_first_dbt_model
+      description: "A starter dbt model"
+      columns:
+          - name: external_ticket_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: conversation_created_at
+            tests:
+                - not_null
+          - name: closed_at
+            tests:
+                - not_null
+          - name: channel
+            tests:
+                - not_null
+          - name: message_count
+            tests:
+                - not_null
+          - name: language
+            tests:
+                - not_null
+          - name: unique_public_agent_count
+            tests:
+                - not_null
+          - name: public_mean_character_count
+            tests:
+                - not_null
+          - name: public_mean_word_count
+            tests:
+                - not_null
+          - name: private_message_count
+            tests:
+                - not_null
+          - name: public_message_count
+            tests:
+                - not_null
+          - name: klaus_sentiment
+            tests:
+                - not_null
+          - name: is_closed
+            tests:
+                - not_null
+          - name: review_created
+            tests:
+                - not_null
+          - name: category_score
+            tests:
+                - not_null
+          - name: category
+            tests:
+                - not_null
+          - name: source
+            tests:
+                - not_null
